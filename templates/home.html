@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Data Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            margin-top: 15px;
+            padding: 10px;
+            width: 100%;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Weather Data Input Form</h2>
+        <form action=" {{url_for('predict')}} " method = 'post'>
+            <label for="temperature">Temperature:</label>
+            <input type="text" id="temperature" name="temperature">
+
+            <label for="rh">Relative Humidity (RH):</label>
+            <input type="text" id="rh" name="rh">
+
+            <label for="ws">Wind Speed (Ws):</label>
+            <input type="text" id="ws" name="ws">
+
+            <label for="rain">Rainfall:</label>
+            <input type="text" id="rain" name="rain">
+
+            <label for="ffmc">Fine Fuel Moisture Code (FFMC):</label>
+            <input type="text" id="ffmc" name="ffmc">
+
+            <label for="dmc">Duff Moisture Code (DMC):</label>
+            <input type="text" id="dmc" name="dmc">
+
+            <label for="isi">Initial Spread Index (ISI):</label>
+            <input type="text" id="isi" name="isi">
+
+            <label for="classes">Fire Behavior Classes:</label>
+            <input type="text" id="classes" name="classes">
+
+            <label for="region">Region:</label>
+            <input type="text" id="region" name="region">
+
+            <input type="submit" value="Predict">
+        </form>
+        <h2>The FWI Prediction is  : {{result}}</h2>
+    </div>
+
+</body>
+</html>
